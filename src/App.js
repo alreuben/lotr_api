@@ -1,37 +1,26 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { useEffect, useState } from 'react';
+import GetAllFilms from './GetAllFilms';
+import ChooseFilm from './ChooseFilm';
 
-const App = () => {
+const App = (films, setFilms, filmId, setFilmId) => {
 
-    const [lotr, setLotr] = useState([])
-    // const [quote, setQuote] = useState()
-    // const [character, setCharacter] = useState();
-    
-    useEffect(() => {
-
-        const headers = {
-            'Accept': 'application/json',
-            'Authorization': 'Bearer 36H_uSF2UL6WB97Foiob'
-          }
-
-        const getLotr = async () => {
-            let data = await fetch('https://the-one-api.dev/v2/quote', {
-              headers: headers
-            })
-            let lotr = await data.json()
-            let lotrData = lotr.docs 
-            setLotr(lotrData)
-            console.log(lotrData)
-            console.log(lotrData[0].name)
-        }
-        
-        getLotr()
-        
-    }, [])
+  // const [films, setFilms] = useState([])
+  // const [filmId, setFilmId] = useState()
 
     return (
       <>
-        <ul>test</ul>
-        {/* <p>{lotrData.name}</p> */}
+         <BrowserRouter>
+              <Routes>
+                  <Route path="/" element={<GetAllFilms />}/>
+                  {/* <Route path="/{film.name}" element={<ChooseFilm />}/> */}
+                  <Route path="/ChooseFilm" element={<ChooseFilm />}/>
+                 
+              </Routes>
+        </BrowserRouter>
+       {/* <GetAllFilms films={films} setFilms={setFilms} /> */}
+      <ChooseFilm films={films} setFilms={setFilms} filmId={filmId} setFilmId={setFilmId} />
+  
       </>
     )
 }
