@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const [lotr, setLotr] = useState([])
+    // const [quote, setQuote] = useState()
+    // const [character, setCharacter] = useState();
+    
+    useEffect(() => {
+
+        const headers = {
+            'Accept': 'application/json',
+            'Authorization': 'Bearer 36H_uSF2UL6WB97Foiob'
+          }
+
+        const getLotr = async () => {
+            let data = await fetch('https://the-one-api.dev/v2/quote', {
+              headers: headers
+            })
+            let lotr = await data.json()
+            let lotrData = lotr.docs 
+            setLotr(lotrData)
+            console.log(lotrData)
+            console.log(lotrData[0].name)
+        }
+        
+        getLotr()
+        
+    }, [])
+
+    return (
+      <>
+        <ul>test</ul>
+        {/* <p>{lotrData.name}</p> */}
+      </>
+    )
 }
 
 export default App;
