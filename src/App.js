@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { useEffect, useState } from 'react';
-import GetAllFilms from './GetAllFilms';
-import ChooseFilm from './ChooseFilm';
+import LandingPage from './LandingPage';
+import Fellowship from './Fellowship';
 
 const App = (films, setFilms, filmId, setFilmId) => {
 
@@ -12,15 +12,11 @@ const App = (films, setFilms, filmId, setFilmId) => {
       <>
          <BrowserRouter>
               <Routes>
-                  <Route path="/" element={<GetAllFilms />}/>
-                  {/* <Route path="/{film.name}" element={<ChooseFilm />}/> */}
-                  <Route path="/ChooseFilm" element={<ChooseFilm />}/>
+                  <Route path="/" element={<LandingPage/>} />
+                  <Route path="/Fellowship" element={<Fellowship />} />
                  
               </Routes>
         </BrowserRouter>
-       {/* <GetAllFilms films={films} setFilms={setFilms} /> */}
-      <ChooseFilm films={films} setFilms={setFilms} filmId={filmId} setFilmId={setFilmId} />
-  
       </>
     )
 }

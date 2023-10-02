@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom";
 import { useEffect, useState } from 'react'
-import ChooseFilm from "../ChooseFilm";
+import 'bootstrap/dist/css/bootstrap.css';
 
-const GetAllFilms = () => {
+const LandingPage= () => {
 
   const [films, setFilms] = useState([])
   const [filmId, setFilmId] = useState('')
@@ -16,13 +16,14 @@ const GetAllFilms = () => {
           }
 
         const getFilms = async () => {
-            let data = await fetch('https://the-one-api.dev/v2/movie', {
+            let data = await fetch('https://the-one-api.dev/v2/movie?_id!=5cd95395de30eff6ebccde56,5cd95395de30eff6ebccde57', {
               headers: headers
             })
             let films = await data.json()
             let filmData = films.docs 
             setFilms(filmData)
-            // console.log(filmData) - returns array of all films
+            // - returns array of all films
+            console.log(filmData)
         }
         
         getFilms()
@@ -34,17 +35,17 @@ const GetAllFilms = () => {
       console.log('Film ID: ', filmId)
    }
 
-    return (
-      <>
-      <h1>Choose a Film</h1>
-        <div>
-          {films.map((film) => (
-           <Link to={"/ChooseFilm"}><p key={film._id} onClick={() => handleClick(film._id)}> {film.name}</p></Link>
-           ))}
-           {/* <ChooseFilm films={films} setFilms={setFilms} filmId={filmId} setFilmId={setFilmId} /> */}
-         </div>
-      </>
-    )
+   return (
+    <>
+    <h1 className="display-1">The Lord of the Rings Quote Generator</h1>
+    <h2 className="display-2">Choose a Film</h2>
+      <div>
+        <Link to={"/Fellowship"}><p>The Fellowship of the Ring</p></Link>
+        <p>The Two Towers</p>
+        <p>The Return of the King</p>
+       </div>
+    </>
+  )
 }
 
-export default GetAllFilms;
+export default LandingPage;
