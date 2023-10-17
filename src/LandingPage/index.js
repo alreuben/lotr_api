@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
+import './styles.css'
 
 const LandingPage = () => {
 

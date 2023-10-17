@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import './styles.css'
 import frodo from '../images/frodo2.webp';
 import samwise from '../images/samwise.webp';
 import pippin from '../images/pippin.jpg'
@@ -14,12 +15,14 @@ const Characters = ({onClick}) => {
       id: '5cd99d4bde30eff6ebccfc15',
       name: 'Frodo Baggins',
       image: frodo,
+      quote: '' ,
     },
 
     {
       id: '5cd99d4bde30eff6ebccfd0d',
       name: 'Samwise Gamgee',
       image: samwise,
+      quote: '' ,
     },
 
     {
@@ -59,14 +62,14 @@ const Characters = ({onClick}) => {
     }
   ]
 
-  const DisplayCharacters = ({ character, characterQuote }) => {
+  const DisplayCharacters = ({character}) => {
     return (
       <div className="col-sm-3">
-        <div className="card border-0 mx-auto" style={{ width: '18rem' }}>
-          <img src={character.image} style={{ width: '210px', height: '300px' }} className="card-img-top" alt={`Image of ${character.name}`} onClick={() => onClick(character)} />
-          <div id='cardBody' className="card-body">
-            <p className="card-text">{character.name}</p>
-            <p id ='characterQuotePara' className="card-text"></p>
+        <div className="card border-0 " style={{ width: '18rem'}}>
+          <img src={character.image} style={{ width: '210px', height: '300px' }} className="card-img-top mx-auto" alt={`Image of ${character.name}`} onClick={() => onClick(character)}  />
+          <div id='cardBody' className="card-body mx-auto">
+            <p className="card-text ">{character.name}</p>
+            {/* <p id ='characterQuotePara' className="card-text">{characterQuote}</p> */}
           </div>
         </div>
       </div>
@@ -80,4 +83,4 @@ const Characters = ({onClick}) => {
   )
 }
 
-export default Characters;
+export default Characters

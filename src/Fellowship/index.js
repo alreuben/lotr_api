@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useEffect, useState } from 'react'
 import Characters from '../Characters';
+import './styles.css'
 
 const Fellowship = () => {
   const [quotes, setQuotes] = useState([]);
-  const [characterQuote, setCharacterQuote] = useState('Fetching quote');
-  const [character, setCharacter] = useState([]);
+  const [characterQuote, setCharacterQuote] = useState('');
+  const [characterName, setCharacterName] = useState('');
 
 
   useEffect(() => {
@@ -21,67 +23,45 @@ const Fellowship = () => {
       let quotes = await data.json();
       let quoteData = quotes.docs;
       setQuotes(quoteData)
-      console.log(quoteData);
+      // console.log(quoteData);
     }
 
     getQuotes();
   }, []);
 
 
+
+
   const handleClick = (character) => {
-    const clickedCharacterQuotes = quotes.find(quote => quote.character === character.id)
+    const characterQuotes = quotes.filter((quote) => quote.character === character.id)
+  
+    if (characterQuotes.length > 0) {
+      // Generate a random index for the quotes
+      const randomIndex = Math.floor(Math.random() * characterQuotes.length)
+      const randomQuote = characterQuotes[randomIndex].dialog
+      setCharacterQuote(randomQuote)
+      setCharacterName(character.name)
+  
+      const characterQuotePara = document.getElementById('characterQuotePara')
+      characterQuotePara.classList.remove('visually-hidden') // makes quote visible on screen
 
-    if (clickedCharacterQuotes) { // Set the quotes for the selected character
-      setCharacterQuote(clickedCharacterQuotes.dialog) // set dialog to state
-      // console.log(characterQuote)
-      const characterQuotePara = document.getElementById('characterQuotePara') // get paragraph element from character component
-      characterQuotePara.innerHTML = (characterQuote) // add character quote to paragraph
     } else {
-      setCharacterQuote(character.name + ' had no lines in this film...');
+      setCharacterQuote(character.name + ' had no lines in this film.'); // error handling
+      setCharacterName(character.name)
     }
-    // console.log(character.name + ': ' + characterQuote)
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   return (
     <div>
       <h1 className="display-1 text-center py-5">Click on a Character</h1>
-      <Characters onClick={handleClick} />
+      <Characters onClick={handleClick} characterQuote={characterQuote} />
+      <div id='characterQuotePara' class="position-absolute top-50 start-50 translate-middle p-10 visually-hidden">
+      <p id='paraName' className='text-center px-5'>{characterName}</p>
+        <p id='paraQuote' className='text-center px-5'> {characterQuote} </p>
+      </div>
     </div>
-
   )
 }
 
 export default Fellowship;
-
-
-// const handleClick = (character) => {
-//   const characterQuotes = quotes.filter(quote => quote.character === character.id);
-
-//   if (characterQuotes.length > 0) {
-// Generate a random index for the quotes
-//     const randomIndex = Math.floor(Math.random() * characterQuotes.length);
-//     const randomQuote = characterQuotes[randomIndex].dialog;
-//     setCharacterQuote(randomQuote);
-//   } else {
-//     setCharacterQuote(character.name + ' had no lines in this film...');
-//   }
-
-//   console.log(character.name + ': ' + characterQuote);
-// }
