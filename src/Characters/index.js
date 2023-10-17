@@ -8,7 +8,7 @@ import gandalf from '../images/gandalf.webp'
 import gimli from '../images/gimli.webp'
 import legolas from '../images/Legolas.webp'
 
-const Characters = ({ onClick }) => {
+const Characters = ({onClick}) => {
   const characters = [
     {
       id: '5cd99d4bde30eff6ebccfc15',
@@ -23,13 +23,13 @@ const Characters = ({ onClick }) => {
     },
 
     {
-      id: '5cd99d4bde30eff6ebccfe7f',
+      id: '5cd99d4bde30eff6ebccfe2e',
       name: 'Peregrin Took',
       image: pippin,
     },
 
     {
-      id: '5cd99d4bde30eff6ebccfe7b',
+      id: '5cd99d4bde30eff6ebccfc7c',
       name: 'Meriadoc Brandybuck',
       image: merry,
     },
@@ -48,7 +48,7 @@ const Characters = ({ onClick }) => {
 
     {
       id: '5cd99d4bde30eff6ebccfd23',
-      name: 'Gimli',
+      name: 'Gimli, son of Glóin',
       image: gimli,
     },
 
@@ -66,6 +66,7 @@ const Characters = ({ onClick }) => {
           <img src={character.image} style={{ width: '210px', height: '300px' }} className="card-img-top" alt={`Image of ${character.name}`} onClick={() => onClick(character)} />
           <div id='cardBody' className="card-body">
             <p className="card-text">{character.name}</p>
+            <p id ='characterQuotePara' className="card-text"></p>
           </div>
         </div>
       </div>

@@ -30,11 +30,6 @@ const LandingPage = () => {
 
   }, [])
 
-  // const handleClick = (filmId) => {
-  //   setFilmId(filmId)
-  //   console.log('Film ID: ', filmId)
-  // }
-
   return (
     <>
       <h1 className="display-1 text-center py-5">The Lord of the Rings Quote Generator</h1>
