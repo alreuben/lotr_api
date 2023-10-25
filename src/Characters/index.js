@@ -15,14 +15,12 @@ const Characters = ({onClick}) => {
       id: '5cd99d4bde30eff6ebccfc15',
       name: 'Frodo Baggins',
       image: frodo,
-      quote: '' ,
     },
 
     {
       id: '5cd99d4bde30eff6ebccfd0d',
       name: 'Samwise Gamgee',
       image: samwise,
-      quote: '' ,
     },
 
     {
@@ -65,8 +63,8 @@ const Characters = ({onClick}) => {
   const DisplayCharacters = ({character}) => {
     return (
       <div className="col-sm-3">
-        <div className="card border-0 " style={{ width: '18rem'}}>
-          <img src={character.image} style={{ width: '210px', height: '300px' }} className="card-img-top mx-auto" alt={`Image of ${character.name}`} onClick={() => onClick(character)}  />
+        <div className="card border-0" style={{ width: '18rem' }}>
+          <img src={character.image} style={{ width: '210px', height: '300px' }} className="card-img-top mx-auto" alt={`Image of ${character.name}`} onClick={() => onClick(character)} />
           <div id='cardBody' className="card-body mx-auto">
             <p className="card-text ">{character.name}</p>
             {/* <p id ='characterQuotePara' className="card-text">{characterQuote}</p> */}
@@ -77,8 +75,10 @@ const Characters = ({onClick}) => {
   }
 
   return (
-    <div className="row d-flex justify-content-center">
-      {characters.map((character) => <DisplayCharacters character={character} key={character.id} />)}
+    <div className="container">
+      <div className="row justify-content-around">
+        {characters.map((character) => <DisplayCharacters character={character} key={character.id} />)}
+      </div>
     </div>
   )
 }

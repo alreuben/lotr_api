@@ -1,8 +1,28 @@
 body {
-    background-color: #222315;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    overflow-x: hidden
 }
 
-h1, h2 {
+h1 {
+    font-family: 'Ringbearer';
+    color: #EED65E;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Ringbearer';
+    color: #D7B032;
+    font-size: 5rem;
+}
+
+h3 {
     font-family: 'Ringbearer';
     color: #F3C05C;
 }
+
+h3:hover {
+    transform: scale(1.40);
+  }
