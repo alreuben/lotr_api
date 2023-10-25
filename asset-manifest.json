@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d0b47223.css",
+    "main.js": "/static/js/main.2c11b02d.js",
+    "static/js/787.a08d06d3.chunk.js": "/static/js/787.a08d06d3.chunk.js",
+    "static/media/aragorn.webp": "/static/media/aragorn.9026e0abe3b606d426d9.webp",
+    "static/media/gandalf.webp": "/static/media/gandalf.87e00d707a025f3400c6.webp",
+    "static/media/Legolas.webp": "/static/media/Legolas.a7e76347e4de1e377554.webp",
+    "static/media/frodo2.webp": "/static/media/frodo2.7b23b189c5730b228b29.webp",
+    "static/media/samwise.webp": "/static/media/samwise.de8df443ba727e3f031a.webp",
+    "static/media/merry.webp": "/static/media/merry.d8802be2a16fac6ce2e9.webp",
+    "static/media/gimli.webp": "/static/media/gimli.2f5fb8f7a28db8d06551.webp",
+    "index.html": "/index.html",
+    "main.d0b47223.css.map": "/static/css/main.d0b47223.css.map",
+    "main.2c11b02d.js.map": "/static/js/main.2c11b02d.js.map",
+    "787.a08d06d3.chunk.js.map": "/static/js/787.a08d06d3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0b47223.css",
+    "static/js/main.2c11b02d.js"
+  ]
+}
