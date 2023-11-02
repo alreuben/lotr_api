@@ -1,20 +1,19 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import { useEffect, useState } from 'react';
+import {useState} from 'react';
 import LandingPage from './LandingPage';
-import Fellowship from './Fellowship';
+import Film from './Film';
 
 
-const App = (films, setFilms, filmId, setFilmId) => {
+const App = () => {
 
-  // const [films, setFilms] = useState([])
-  // const [filmId, setFilmId] = useState()
+  const [film, setFilm] = useState('')
 
     return (
       <>
          <BrowserRouter>
               <Routes>
-                  <Route path="/" element={<LandingPage/>} />
-                  <Route path="/Fellowship" element={<Fellowship />} />
+                  <Route path="/" element={<LandingPage film={film} setFilm={setFilm} />} />
+                  <Route path="/Film" element={<Film film={film} setFilm={setFilm} />} />
               </Routes>
         </BrowserRouter>
       </>

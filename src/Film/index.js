@@ -1,18 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { useEffect, useState } from 'react'
+import {useNavigate} from "react-router";
 import Characters from '../Characters';
 import './styles.css'
 import Nav from "../Nav";
-import LandingPage from '../LandingPage';
 
-const Fellowship = ({ film }) => {
+const Film = ({ film, setFilm }) => {
 
-  const [quotes, setQuotes] = useState([]);
-  const [characterQuote, setCharacterQuote] = useState('');
-  const [characterName, setCharacterName] = useState('');
+  const [quotes, setQuotes] = useState([])
+  const [characterQuote, setCharacterQuote] = useState('')
+  const [characterName, setCharacterName] = useState('')
+  const navigate = useNavigate()
 
-  console.log(film)
+  if(film == '') {
+    navigate('/')
+}
 
   useEffect(() => {
     const headers = {
@@ -21,15 +24,29 @@ const Fellowship = ({ film }) => {
     }
 
     const getQuotes = async () => {
-      let data = await fetch('https://the-one-api.dev/v2/movie/5cd95395de30eff6ebccde5c/quote', {
-        headers: headers
-      })
-      let quotes = await data.json();
-      let quoteData = quotes.docs;
-      setQuotes(quoteData)
-      // console.log(quoteData);
+      if (film == '5cd95395de30eff6ebccde5c') {
+        let data = await fetch('https://the-one-api.dev/v2/movie/5cd95395de30eff6ebccde5c/quote', {
+          headers: headers
+        })
+        let quotes = await data.json();
+        let quoteData = quotes.docs;
+        setQuotes(quoteData)
+      } else if (film == '5cd95395de30eff6ebccde5b') {
+        let data = await fetch('https://the-one-api.dev/v2/movie/5cd95395de30eff6ebccde5b/quote', {
+          headers: headers
+        })
+        let quotes = await data.json();
+        let quoteData = quotes.docs;
+        setQuotes(quoteData)
+      } else {
+        let data = await fetch('https://the-one-api.dev/v2/movie/5cd95395de30eff6ebccde5d/quote', {
+          headers: headers
+        })
+        let quotes = await data.json();
+        let quoteData = quotes.docs;
+        setQuotes(quoteData)
+      }
     }
-
     getQuotes();
   }, []);
 
@@ -62,4 +79,4 @@ const Fellowship = ({ film }) => {
   )
 }
 
-export default Fellowship;
+export default Film;
