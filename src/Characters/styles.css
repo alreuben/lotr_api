@@ -5,3 +5,9 @@
 .card-text {
     color: #F3C05C;
 }
+
+/* @media only screen and (max-width: 600px) {
+    img {
+        width: auto;
+    }
+} */

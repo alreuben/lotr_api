@@ -1,10 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { useEffect, useState } from 'react'
-import {useNavigate} from "react-router";
-import Characters from '../Characters';
+import {useNavigate} from "react-router"
+import Characters from '../Characters'
+import Nav from "../Nav"
 import './styles.css'
-import Nav from "../Nav";
 
 const Film = ({ film, setFilm }) => {
 
@@ -15,8 +15,8 @@ const Film = ({ film, setFilm }) => {
 
   if(film == '') {
     navigate('/')
-}
-
+  }
+    
   useEffect(() => {
     const headers = {
       'Accept': 'application/json',
@@ -67,9 +67,9 @@ const Film = ({ film, setFilm }) => {
   }
 
   return (
-    <div style={{ backgroundColor: '#222315' }}>
+    <div className='wrapper-Film'>
       <Nav />
-      <h1 className="display-1 text-center py-5">Click on a Character</h1>
+      <h1 className="display-md-1 text-center py-5">Click on a Character</h1>
       <Characters onClick={handleClick} characterQuote={characterQuote} />
       <div id='characterQuotePara' className="position-absolute top-50 start-50 translate-middle p-10 visually-hidden">
         <p id='paraName' className='text-center px-5'>{characterName}</p>

@@ -62,8 +62,8 @@ const Characters = ({onClick}) => {
 
   const DisplayCharacters = ({character}) => {
     return (
-      <div className="col-sm-3">
-        <div className="card border-0" style={{ width: '18rem' }}>
+      <div className="col-md-3">
+        <div className="card border-0" style={{ width: 'auto' }}>
           <img src={character.image} style={{ width: '210px', height: '300px' }} className="card-img-top mx-auto" alt={`Image of ${character.name}`} onClick={() => onClick(character)} />
           <div id='cardBody' className="card-body mx-auto">
             <p className="card-text ">{character.name}</p>
@@ -77,7 +77,9 @@ const Characters = ({onClick}) => {
   return (
     <div className="container">
       <div className="row justify-content-around">
+      <div className="card-group">
         {characters.map((character) => <DisplayCharacters character={character} key={character.id} />)}
+        </div>
       </div>
     </div>
   )

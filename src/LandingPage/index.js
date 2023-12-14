@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles.css'
 import logo from '../images/logo3.webp'
+import '../App.css'
 
 const LandingPage = ({film, setFilm}) => {
 
@@ -36,14 +37,14 @@ const LandingPage = ({film, setFilm}) => {
   }
  
   return (
-    <>
+    <div className="wrapper-LandingPage">
       <img src={logo} alt='lord of the rings logo' className="mx-auto d-block pt-5" />
       <h1 className="text-center">Quote Generator</h1>
       <h2 className="text-center pb-2">Choose a Film</h2>
       <div>
       {movies.map((movie) => <DisplayMovies movie={movie} key={movie.id} />)}
       </div>
-    </>
+    </div>
   )
 }
 

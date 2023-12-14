@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bilbo&display=swap');
 
-body {
-    background-color: #222315;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; 
-    overflow-x: hidden
-}
 
 #characterQuotePara {
-background-color: #11130e83;
+background-color: #11130ec7;
 }
 
+
+/* MOBILE */
 #paraName {
     font-family: 'Ringbearer';
     color: #856638;
@@ -23,3 +18,24 @@ background-color: #11130e83;
     color: #F3C05C;
     font-size: 2rem;
 }
+
+#characterQuotePara {
+    pointer-events: none
+}
+
+
+/* DESKTOP AND ABOVE */
+
+/* @media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    #characterQuotePara {
+        position: relative;
+        
+
+    }
+    
+} */
