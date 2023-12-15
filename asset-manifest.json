@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lotr_api/static/css/main.90d10092.css",
-    "main.js": "/lotr_api/static/js/main.ccd9d6e4.js",
+    "main.css": "/lotr_api/static/css/main.1219eb55.css",
+    "main.js": "/lotr_api/static/js/main.a496a2b8.js",
     "static/js/787.a08d06d3.chunk.js": "/lotr_api/static/js/787.a08d06d3.chunk.js",
     "static/media/background.jpg": "/lotr_api/static/media/background.cc8e380f2bfb0419e658.jpg",
     "static/media/aragorn.webp": "/lotr_api/static/media/aragorn.9026e0abe3b606d426d9.webp",
@@ -13,12 +13,12 @@
     "static/media/merry.webp": "/lotr_api/static/media/merry.d8802be2a16fac6ce2e9.webp",
     "static/media/gimli.webp": "/lotr_api/static/media/gimli.2f5fb8f7a28db8d06551.webp",
     "index.html": "/lotr_api/index.html",
-    "main.90d10092.css.map": "/lotr_api/static/css/main.90d10092.css.map",
-    "main.ccd9d6e4.js.map": "/lotr_api/static/js/main.ccd9d6e4.js.map",
+    "main.1219eb55.css.map": "/lotr_api/static/css/main.1219eb55.css.map",
+    "main.a496a2b8.js.map": "/lotr_api/static/js/main.a496a2b8.js.map",
     "787.a08d06d3.chunk.js.map": "/lotr_api/static/js/787.a08d06d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.90d10092.css",
-    "static/js/main.ccd9d6e4.js"
+    "static/css/main.1219eb55.css",
+    "static/js/main.a496a2b8.js"
   ]
 }
