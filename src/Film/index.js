@@ -72,8 +72,8 @@ const Film = ({ film, setFilm }) => {
       <h1 className="display-md-1 text-center py-5">Click on a Character</h1>
       <Characters onClick={handleClick} characterQuote={characterQuote} />
       <div id='characterQuotePara' className="position-absolute top-50 start-50 translate-middle p-10 visually-hidden">
-        <p id='paraName' className='text-center px-5'>{characterName}</p>
-        <p id='paraQuote' className='text-center px-5'> {characterQuote} </p>
+        <p id='paraName' className='text-center px-5 pt-3'>{characterName}</p>
+        <p id='paraQuote' className='text-center'> {characterQuote} </p>
       </div>
     </div>
   )
