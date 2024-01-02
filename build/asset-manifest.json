@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/lotr_api/static/css/main.1219eb55.css",
+    "main.js": "/lotr_api/static/js/main.a496a2b8.js",
+    "static/js/787.a08d06d3.chunk.js": "/lotr_api/static/js/787.a08d06d3.chunk.js",
+    "static/media/background.jpg": "/lotr_api/static/media/background.cc8e380f2bfb0419e658.jpg",
+    "static/media/aragorn.webp": "/lotr_api/static/media/aragorn.9026e0abe3b606d426d9.webp",
+    "static/media/gandalf.webp": "/lotr_api/static/media/gandalf.87e00d707a025f3400c6.webp",
+    "static/media/Legolas.webp": "/lotr_api/static/media/Legolas.a7e76347e4de1e377554.webp",
+    "static/media/logo3.webp": "/lotr_api/static/media/logo3.713a7d1ee54ba3fd2cf7.webp",
+    "static/media/frodo2.webp": "/lotr_api/static/media/frodo2.7b23b189c5730b228b29.webp",
+    "static/media/samwise.webp": "/lotr_api/static/media/samwise.de8df443ba727e3f031a.webp",
+    "static/media/merry.webp": "/lotr_api/static/media/merry.d8802be2a16fac6ce2e9.webp",
+    "static/media/gimli.webp": "/lotr_api/static/media/gimli.2f5fb8f7a28db8d06551.webp",
+    "index.html": "/lotr_api/index.html",
+    "main.1219eb55.css.map": "/lotr_api/static/css/main.1219eb55.css.map",
+    "main.a496a2b8.js.map": "/lotr_api/static/js/main.a496a2b8.js.map",
+    "787.a08d06d3.chunk.js.map": "/lotr_api/static/js/787.a08d06d3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1219eb55.css",
+    "static/js/main.a496a2b8.js"
+  ]
+}
