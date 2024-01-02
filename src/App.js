@@ -11,7 +11,7 @@ const App = () => {
       <div className="App">
          <BrowserRouter>
               <Routes>
-                  <Route path="/" element={<LandingPage film={film} setFilm={setFilm} />} />
+                  <Route path="/lotr_api" element={<LandingPage film={film} setFilm={setFilm} />} />
                   <Route path="/Film" element={<Film film={film} setFilm={setFilm} />} />
               </Routes>
         </BrowserRouter>
